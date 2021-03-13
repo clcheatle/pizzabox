@@ -24,9 +24,23 @@ namespace PizzaBox.Domain.Models
             };
         }
 
+        protected override double CalculateTotal()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public CheesePizza()
         {
             Name = "Cheese Pizza";
+        }
+
+        public CheesePizza(Crust c, Size s)
+        {
+            Name = "Cheese Pizza";
+            Crust.Name = c.Name;
+            Crust.Price = c.Price;
+            Size.Name = s.Name;
+            Size.Price = s.Price;
         }
     }
 }

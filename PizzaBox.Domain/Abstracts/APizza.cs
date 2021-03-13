@@ -35,6 +35,7 @@ namespace PizzaBox.Domain.Abstracts
         protected abstract void AddCrust();
         protected abstract void AddSize();
         protected abstract void AddToppings(); 
+        protected abstract double CalculateTotal();
 
         public override string ToString()
         {

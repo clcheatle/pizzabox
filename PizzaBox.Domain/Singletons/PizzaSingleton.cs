@@ -14,9 +14,16 @@ namespace PizzaBox.Domain.Singletons
     public class PizzaSingleton
     {
         private readonly string _path = @"pizza.xml";
+        private readonly string _pathCrust = @"crust.xml";
+        private readonly string _pathSize = @"size.xml";
+        private readonly string _pathTopping = @"topping.xml";
+
         private static PizzaSingleton _PizzaSingleton;
         public List<APizza> Pizzas { get; set; }
-        
+        public List<Crust> Crusts {get; set;}
+        public List<Size> Sizes {get; set;}
+        public List<Topping> PizzaToppings {get; set;}
+
         public static PizzaSingleton Instance 
         { 
             get
@@ -32,7 +39,6 @@ namespace PizzaBox.Domain.Singletons
 
         public void Seeding()
         {
-            System.Console.WriteLine("Test");
             var pizzas = new List<APizza>
             {
                 new CustomPizza(),
@@ -43,11 +49,46 @@ namespace PizzaBox.Domain.Singletons
                 new VeggiePizza()
             };
 
+            var crusts = new List<Crust>
+            {
+                new Crust("Regular", 0.25),
+                new Crust("Thin", 0.25),
+                new Crust("Stuffed", 2.00)
+            };
+
+            var sizes = new List<Size>
+            {
+                new Size("Small", 7.50),
+                new Size("Medium", 10.50),
+                new Size("Large", 13.50)
+            };
+
+            var pizzaToppings = new List<Topping>
+            {
+                new Topping("Pepperoni", 0.50),
+                new Topping("Sausage", 0.50),
+                new Topping("Ham", 0.50),
+                new Topping("Bacon", 0.50),
+                new Topping("Black Olives", 0.50),
+                new Topping("Green Peppers", 0.50),
+                new Topping("Diced Tomatoes", 0.50),
+                new Topping("Mushrooms", 0.50),
+                new Topping("Spinach", 0.50),
+                new Topping("Mixed Onions", 0.50),
+                new Topping("Pineapple", 0.50)
+            };
+
             var fs = new FileStorage();
 
             fs.WriteToXml<APizza>(pizzas, _path);
+            fs.WriteToXml<Crust>(crusts, _pathCrust);
+            fs.WriteToXml<Size>(sizes, _pathSize);
+            fs.WriteToXml<Topping>(pizzaToppings, _pathTopping);
 
             Pizzas = fs.ReadFromXml<APizza>(_path).ToList();
+            Crusts = fs.ReadFromXml<Crust>(_pathCrust).ToList();
+            Sizes = fs.ReadFromXml<Size>(_pathSize).ToList();
+            PizzaToppings = fs.ReadFromXml<Topping>(_pathTopping).ToList();
         }
     }
 }

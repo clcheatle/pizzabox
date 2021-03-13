@@ -32,12 +32,12 @@
     </Size>
     <Toppings>
       <Topping>
-        <Name />
-        <Price>0</Price>
+        <Name>Ham</Name>
+        <Price>1</Price>
       </Topping>
       <Topping>
-        <Name />
-        <Price>0</Price>
+        <Name>Pineapple</Name>
+        <Price>1</Price>
       </Topping>
     </Toppings>
     <Name>Hawaiian Pizza</Name>

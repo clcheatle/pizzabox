@@ -23,10 +23,21 @@ namespace PizzaBox.Domain.Models
                 new Topping()
             };
         }
+        protected override double CalculateTotal()
+        {
+            throw new System.NotImplementedException();
+        }
 
         public VeggiePizza()
         {
             Name = "Veggie Pizza";
+        }
+
+        public VeggiePizza(string c, string s)
+        {
+            Name = "Veggie Pizza";
+            Crust.Name = c;
+            Size.Name = s;
         }
     }
 }
