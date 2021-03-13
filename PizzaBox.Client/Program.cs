@@ -87,31 +87,44 @@ namespace PizzaBox.Client
                 pizzaSelCount += 1;
             }
 
-            // System.Console.WriteLine("1. Pepperoni Pizza");
-            // System.Console.WriteLine("2. Sausage Pizza");
-            // System.Console.WriteLine("3. Veggie Pizza");
-            // System.Console.WriteLine("4. Hawaiian Pizza");
-            // System.Console.WriteLine("5. Custom Pizza");
+            var userChoice = int.Parse(System.Console.ReadLine());
+            var userPizzaChoice = ps.Pizzas[userChoice-1].Name;
+            System.Console.WriteLine("Pizza chosen: {0}", userPizzaChoice);
 
-            var userChoice = System.Console.ReadLine();
+            
+            
+            // switch(userPizzaChoice.ToLower())
+            // {
+            //     case "custom pizza":
+            //         var crustChoice = CrustMenu();
+            //         var sizeChoice = SizeMenu();
+            //         break;
+            //     case "cheese pizza":
+            //         var crustChoice = CrustMenu();
+            //         var sizeChoice = SizeMenu();
+            //         break;
+            //     case "hawaiian pizza":
+            //         break;
+            //     case "pepperoni pizza":
+            //         break;
+            //     case "sausage pizza":
+            //         break;
+            //     case "veggie pizza":
+            //         break;
+            // }
 
-            switch (userChoice)
-            {
-                case "1":
-                    presetPizza();
-                    break;
-                case "2":
-                    presetPizza();
-                    break;
-            }
+        }
+        public static void PresetMenu()
+        {
+            var crustChoice = CrustMenu();
+            var sizeChoice = SizeMenu();
         }
 
-        public static void presetPizza()
+        public static void CreatePepperoni(string c, string s)
         {
-            var crustType = CrustMenu();
-            Console.WriteLine("Crust type: " + crustType);
-            var sizeType = SizeMenu();
-            Console.WriteLine("Size: " + sizeType);
+            PepperoniPizza p = new PepperoniPizza();
+            p.Crust.Name = c;
+            p.Size.Name = s;
         }
 
         public static string CrustMenu()

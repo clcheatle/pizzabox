@@ -4,8 +4,15 @@ namespace PizzaBox.Domain.Models
     {
         public Size()
         {
-            Name = "Small";
-            Price = 7.00;
+            Name = "";
+            Price = 0;
         }
+
+        public Size(string n, double p)
+        {
+            Name = n;
+            Price = p;
+        }
+        
     }
 }

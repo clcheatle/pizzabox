@@ -35,16 +35,19 @@ namespace PizzaBox.Domain.Singletons
             System.Console.WriteLine("Test");
             var pizzas = new List<APizza>
             {
-                new CustomPizza()
+                new CustomPizza(),
+                new HawaiianPizza(),
+                new CheesePizza(),
+                new PepperoniPizza(),
+                new SausagePizza(),
+                new VeggiePizza()
             };
-            System.Console.WriteLine(pizzas[0].Name + " " + pizzas[0].Crust.Name + " " +  pizzas[0].Size.Name);
-            System.Console.WriteLine("Test 2");
+
             var fs = new FileStorage();
-            System.Console.WriteLine("Test 3");
+
             fs.WriteToXml<APizza>(pizzas, _path);
-            System.Console.WriteLine("Test 4");
+
             Pizzas = fs.ReadFromXml<APizza>(_path).ToList();
-            System.Console.WriteLine("Test 5");
         }
     }
 }

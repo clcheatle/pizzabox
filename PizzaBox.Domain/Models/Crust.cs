@@ -4,8 +4,13 @@ namespace PizzaBox.Domain.Models
     {
         public Crust()
         {
-            Name = "thin";
-            Price = 0.50;
+            Name = "";
+            Price = 0;
+        }
+        public Crust(string n, double p)
+        {
+            Name = n;
+            Price = p;
         }
     }
 }

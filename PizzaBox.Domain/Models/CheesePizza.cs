@@ -23,5 +23,10 @@ namespace PizzaBox.Domain.Models
                 new Topping()
             };
         }
+
+        public CheesePizza()
+        {
+            Name = "Cheese Pizza";
+        }
     }
 }

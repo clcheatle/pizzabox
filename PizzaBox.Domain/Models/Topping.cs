@@ -4,9 +4,15 @@ namespace PizzaBox.Domain.Models
     {
         public Topping()
         {
-            Name = "Cheese";
-            Price = 0.50;
-            
+            Name = "";
+            Price = 0;
         }
+
+        public Topping(string n, double p)
+        {
+            Name = n;
+            Price = p;
+        }
+       
     }
 }
