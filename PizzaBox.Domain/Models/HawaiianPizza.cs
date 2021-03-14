@@ -20,14 +20,20 @@ namespace PizzaBox.Domain.Models
             Toppings = new List<Topping>
             {
                 new Topping("Ham", 1.00),
-                new Topping("Pineapple", 1.00)
+                new Topping("Pineapple", .25),
+                new Topping("Cheese", 0.50)
             };
         }
 
-        protected override double CalculateTotal()
+        public override void CalculateTotal()
         {
-            double total = 0.0;
-            return total;
+            double toppingTotal = 0;
+            foreach(var t in Toppings)
+            {
+                toppingTotal += t.Price;
+            }
+
+            Total = toppingTotal + Size.Price + Crust.Price;
         }
 
         public HawaiianPizza()
@@ -35,11 +41,13 @@ namespace PizzaBox.Domain.Models
             Name = "Hawaiian Pizza";
         }
 
-        public HawaiianPizza(string c, string s)
+        public HawaiianPizza(Crust c, Size s)
         {
             Name = "Hawaiian Pizza";
-            Crust.Name = c;
-            Size.Name = s;
+            Crust.Name = c.Name;
+            Crust.Price = c.Price;
+            Size.Name = s.Name;
+            Size.Price = s.Price;
         }
     }
 }

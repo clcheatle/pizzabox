@@ -58,24 +58,24 @@ namespace PizzaBox.Domain.Singletons
 
             var sizes = new List<Size>
             {
-                new Size("Small", 7.50),
-                new Size("Medium", 10.50),
-                new Size("Large", 13.50)
+                new Size("Small", 4.50),
+                new Size("Medium", 7.50),
+                new Size("Large", 10.50)
             };
 
             var pizzaToppings = new List<Topping>
             {
-                new Topping("Pepperoni", 0.50),
-                new Topping("Sausage", 0.50),
-                new Topping("Ham", 0.50),
-                new Topping("Bacon", 0.50),
-                new Topping("Black Olives", 0.50),
-                new Topping("Green Peppers", 0.50),
-                new Topping("Diced Tomatoes", 0.50),
-                new Topping("Mushrooms", 0.50),
-                new Topping("Spinach", 0.50),
-                new Topping("Mixed Onions", 0.50),
-                new Topping("Pineapple", 0.50)
+                new Topping("Pepperoni", 1.00),
+                new Topping("Sausage", 1.00),
+                new Topping("Ham", 1.00),
+                new Topping("Bacon", 1.00),
+                new Topping("Black Olives", 0.25),
+                new Topping("Green Peppers", 0.25),
+                new Topping("Diced Tomatoes", 0.25),
+                new Topping("Mushrooms", 0.25),
+                new Topping("Spinach", 0.25),
+                new Topping("Mixed Onions", 0.25),
+                new Topping("Pineapple", 0.25)
             };
 
             var fs = new FileStorage();

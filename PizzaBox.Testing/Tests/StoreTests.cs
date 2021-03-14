@@ -19,5 +19,21 @@ namespace PizzaBox.Testing.Tests
             Assert.Equal(expected, actual);
 
         }
+
+        [Fact]
+        public void Test_NewYorkStore_Fact()
+        {
+            //Arrange
+            var sut = new NewYorkStore();
+            var expected = "New York Store";
+
+            //act
+            var actual = sut.Name;
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+
     }
 }

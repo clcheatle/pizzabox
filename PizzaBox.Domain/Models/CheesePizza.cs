@@ -19,14 +19,20 @@ namespace PizzaBox.Domain.Models
         {
             Toppings = new List<Topping>
             {
-                new Topping(),
-                new Topping()
+                new Topping("Cheese", 0.5),
+                new Topping("Cheese", 0.5)
             };
         }
 
-        protected override double CalculateTotal()
+        public override void CalculateTotal()
         {
-            throw new System.NotImplementedException();
+            double toppingTotal = 0;
+            foreach(var t in Toppings)
+            {
+                toppingTotal += t.Price;
+            }
+
+            Total = toppingTotal + Size.Price + Crust.Price;
         }
 
         public CheesePizza()

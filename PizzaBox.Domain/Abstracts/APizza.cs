@@ -19,6 +19,7 @@ namespace PizzaBox.Domain.Abstracts
         public Size Size { get; set; }
         public List<Topping> Toppings { get; set; }
         public string Name { get; set; }
+        public double Total { get; set; }
 
         public APizza()
         {
@@ -35,7 +36,7 @@ namespace PizzaBox.Domain.Abstracts
         protected abstract void AddCrust();
         protected abstract void AddSize();
         protected abstract void AddToppings(); 
-        protected abstract double CalculateTotal();
+        public abstract void CalculateTotal();
 
         public override string ToString()
         {

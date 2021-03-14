@@ -19,13 +19,22 @@ namespace PizzaBox.Domain.Models
         {
             Toppings = new List<Topping>
             {
-                new Topping(),
-                new Topping()
+                new Topping("Mushrooms", 0.25),
+                new Topping("Diced Tomatoes", 0.25),
+                new Topping("Green Peppers", 0.25),
+                new Topping("Black Olives", 0.25),
+                new Topping("Cheese", 0.5)
             };
         }
-        protected override double CalculateTotal()
+        public override void CalculateTotal()
         {
-            throw new System.NotImplementedException();
+            double toppingTotal = 0;
+            foreach(var t in Toppings)
+            {
+                toppingTotal += t.Price;
+            }
+
+            Total = toppingTotal + Size.Price + Crust.Price; 
         }
 
         public VeggiePizza()
@@ -33,11 +42,13 @@ namespace PizzaBox.Domain.Models
             Name = "Veggie Pizza";
         }
 
-        public VeggiePizza(string c, string s)
+        public VeggiePizza(Crust c, Size s)
         {
             Name = "Veggie Pizza";
-            Crust.Name = c;
-            Size.Name = s;
+            Crust.Name = c.Name;
+            Crust.Price = c.Price;
+            Size.Name = s.Name;
+            Size.Price = s.Price;
         }
     }
 }

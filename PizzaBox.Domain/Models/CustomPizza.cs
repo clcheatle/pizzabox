@@ -23,7 +23,7 @@ namespace PizzaBox.Domain.Models
                 new Topping()
             };
         }
-        protected override double CalculateTotal()
+        public override void CalculateTotal()
         {
             throw new System.NotImplementedException();
         }
