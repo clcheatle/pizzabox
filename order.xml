@@ -1,40 +1,18 @@
 <?xml version="1.0"?>
 <Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pizzas>
-    <APizza xsi:type="CheesePizza">
+    <APizza xsi:type="PepperoniPizza">
       <Crust>
-        <Name>Thin</Name>
+        <Name>Regular</Name>
         <Price>0.25</Price>
       </Crust>
       <Size>
-        <Name>Large</Name>
-        <Price>10.5</Price>
+        <Name>Medium</Name>
+        <Price>7.5</Price>
       </Size>
       <Toppings>
         <Topping>
-          <Name>Cheese</Name>
-          <Price>0.5</Price>
-        </Topping>
-        <Topping>
-          <Name>Cheese</Name>
-          <Price>0.5</Price>
-        </Topping>
-      </Toppings>
-      <Name>Cheese Pizza</Name>
-      <Total>11.75</Total>
-    </APizza>
-    <APizza xsi:type="SausagePizza">
-      <Crust>
-        <Name>Thin</Name>
-        <Price>0.25</Price>
-      </Crust>
-      <Size>
-        <Name>Small</Name>
-        <Price>4.5</Price>
-      </Size>
-      <Toppings>
-        <Topping>
-          <Name>Sausage</Name>
+          <Name>Pepperoni</Name>
           <Price>1</Price>
         </Topping>
         <Topping>
@@ -42,15 +20,71 @@
           <Price>0.5</Price>
         </Topping>
       </Toppings>
-      <Name>Sausage Pizza</Name>
-      <Total>6.25</Total>
+      <Name>Pepperoni Pizza</Name>
+      <Total>9.25</Total>
+    </APizza>
+    <APizza xsi:type="PepperoniPizza">
+      <Crust>
+        <Name>Stuffed</Name>
+        <Price>2</Price>
+      </Crust>
+      <Size>
+        <Name>Large</Name>
+        <Price>10.5</Price>
+      </Size>
+      <Toppings>
+        <Topping>
+          <Name>Pepperoni</Name>
+          <Price>1</Price>
+        </Topping>
+        <Topping>
+          <Name>Cheese</Name>
+          <Price>0.5</Price>
+        </Topping>
+      </Toppings>
+      <Name>Pepperoni Pizza</Name>
+      <Total>14</Total>
+    </APizza>
+    <APizza xsi:type="VeggiePizza">
+      <Crust>
+        <Name>Regular</Name>
+        <Price>0.25</Price>
+      </Crust>
+      <Size>
+        <Name>Medium</Name>
+        <Price>7.5</Price>
+      </Size>
+      <Toppings>
+        <Topping>
+          <Name>Mushrooms</Name>
+          <Price>0.25</Price>
+        </Topping>
+        <Topping>
+          <Name>Diced Tomatoes</Name>
+          <Price>0.25</Price>
+        </Topping>
+        <Topping>
+          <Name>Green Peppers</Name>
+          <Price>0.25</Price>
+        </Topping>
+        <Topping>
+          <Name>Black Olives</Name>
+          <Price>0.25</Price>
+        </Topping>
+        <Topping>
+          <Name>Cheese</Name>
+          <Price>0.5</Price>
+        </Topping>
+      </Toppings>
+      <Name>Veggie Pizza</Name>
+      <Total>9.25</Total>
     </APizza>
   </Pizzas>
-  <StoreName>New York Store</StoreName>
+  <StoreName>Chicago Store</StoreName>
   <Cust>
-    <Name>cat</Name>
-    <Email>cater</Email>
+    <Name>Catherine</Name>
+    <Email>cheatle@gmail.com</Email>
     <Orders />
   </Cust>
-  <Total>19.26</Total>
+  <Total>34.775</Total>
 </Order>

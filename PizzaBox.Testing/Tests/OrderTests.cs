@@ -10,18 +10,45 @@ namespace PizzaBox.Testing.Tests
         [Fact]
         public void Test_Order_Fact()
         {
+            // Arrange
+            List<APizza> myPizzas = new List<APizza>();
+            myPizzas.Add(new CheesePizza());
+            Customer cust = new Customer("John Smith", "jsmith@gmail.com");
+            NewYorkStore store = new NewYorkStore();
+
+            var myOrder = new Order(myPizzas, store.Name, cust);
+
+            var expectedStore = "New York Store";
+            var expectedCustomer = cust;
+            var expectedPizza = myPizzas;
+
+            //act
+            var actualStore = myOrder.StoreName;
+            var actualCustomer = myOrder.Cust;
+            var actualPizza = myOrder.Pizzas;
+
+            //Assert
+            Assert.Equal(expectedStore, actualStore);
+            Assert.Equal(expectedCustomer, actualCustomer);
+            Assert.Equal(expectedPizza, actualPizza);
+        }
+
+        [Fact]
+        public void Test_Customer_Fact()
+        {
             //Arrange
-            // List<APizza> myPizzas = new List<APizza>();
-            // myPizzas.Add(new CheesePizza());
-            // var myOrder = new Order(myPizzas);
+            Customer cust = new Customer("John Smith", "jsmith@email.com");
 
-            // var expected = "New York Store";
+            var nameExpected = "John Smith";
+            var emailExpected = "jsmith@email.com";
 
-            // //act
-            // var actual = sut.Name;
+            //act
+            var nameActual = cust.Name;
+            var emailActual = cust.Email;
 
-            // //Assert
-            // Assert.Equal(expected, actual);
+            //Assert
+            Assert.Equal(nameExpected, nameActual);
+            Assert.Equal(emailExpected, emailActual);
         }
 
         

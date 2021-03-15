@@ -274,7 +274,7 @@ namespace PizzaBox.Client
         /// <param name="s"></param>
         public static void Checkout(List<APizza> cart, string s)
         {
-            Console.WriteLine("Would you like to checkout? 1 for yes, 2 for no: ");
+            Console.WriteLine("Would you like to checkout? \n1.) Yes \n2.)No \n3.) I want to edit my cart: ");
             var userChoice = int.Parse(Console.ReadLine());
             if(userChoice == 1)
             {
@@ -301,6 +301,11 @@ namespace PizzaBox.Client
         public static void ViewOrderHistory()
         {
 
+        }
+
+        public static void editCart(List<APizza> cart)
+        {
+            
         }
     }
 }
